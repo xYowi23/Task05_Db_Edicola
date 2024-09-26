@@ -29,7 +29,7 @@ namespace DB_lez06_Task_edicola.Models.DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT rivistaId, titolo,casaEditrice,codUniRiv FROM Rivista";
+                cmd.CommandText = "SELECT rivistaId, titolo,prezzo,casaEditrice,codUniRiv FROM Rivista";
 
                 try
                 {
@@ -41,8 +41,9 @@ namespace DB_lez06_Task_edicola.Models.DAL
                         {
                             Id = reader.GetInt32(0),
                             Titolo = reader.GetString(1),
-                            CasaEditrice = reader.GetString(2),
-                            CodUniRiv=reader.GetString(3),
+                            Prezzo = (double)reader.GetDecimal(2),
+                            CasaEditrice = reader.GetString(3),
+                            CodUniRiv=reader.GetString(4),
                         };
                         risultato.Add(rivista);
                     }
@@ -70,8 +71,9 @@ namespace DB_lez06_Task_edicola.Models.DAL
                 {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO Rivista(titolo, casaEditrice) VALUES (@tit,@casaEd)";
+                cmd.CommandText = "INSERT INTO Rivista(titolo, prezzo,casaEditrice) VALUES (@tit,@prezzo,@casaEd)";
                 cmd.Parameters.AddWithValue("@tit", obj.Titolo);
+                cmd.Parameters.AddWithValue("@prezzo", obj.Prezzo);
                 cmd.Parameters.AddWithValue("@casaEd", obj.CasaEditrice);
                 try
                 {

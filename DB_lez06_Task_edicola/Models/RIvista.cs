@@ -12,10 +12,11 @@ namespace DB_lez06_Task_edicola.Models
         public string? Titolo { get; set; }
         public string? CasaEditrice { get; set; }
         public string? CodUniRiv { get; set; }
+        public double Prezzo { get; set; }
 
         public override string ToString()
         {
-            return $"[RIVISTA] {Id} {Titolo} {CasaEditrice} {CodUniRiv}";
+            return $"[RIVISTA] {Id} {Titolo} {CasaEditrice} {Prezzo} {CodUniRiv}";
         }
 
     }

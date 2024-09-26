@@ -20,3 +20,4 @@ C:\Users\Utente\source\repos\DB_lez06_Task_edicola\DB_lez06_Task_edicola\obj\Deb
 C:\Users\Utente\source\repos\DB_lez06_Task_edicola\DB_lez06_Task_edicola\obj\Debug\net8.0\DB_lez06_Task_edicola.pdb
 C:\Users\Utente\source\repos\DB_lez06_Task_edicola\DB_lez06_Task_edicola\obj\Debug\net8.0\DB_lez06_Task_edicola.genruntimeconfig.cache
 C:\Users\Utente\source\repos\DB_lez06_Task_edicola\DB_lez06_Task_edicola\obj\Debug\net8.0\ref\DB_lez06_Task_edicola.dll
+C:\Users\Utente\source\repos\DB_lez06_Task_edicola\DB_lez06_Task_edicola\obj\Debug\net8.0\DB_lez06_Task_edicola.sourcelink.json

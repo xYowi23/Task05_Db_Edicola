@@ -57,13 +57,22 @@ namespace DB_lez06_Task_edicola
                             case "G":
                                 Console.WriteLine("Inserisci il Nome");
                                 string? inNome = Console.ReadLine();
+
+                                Console.WriteLine("Inserisci il Materiale");
+                                string? inMateriale = Console.ReadLine();
+
                                 Console.WriteLine("Inserisci il l'età minima ");
                                 int inEtaMin = Convert.ToInt32 (Console.ReadLine());
+
+                                Console.WriteLine("Inserisci il Prezzo");
+                                double inPrezzo = Convert.ToDouble(Console.ReadLine());
 
                                 Giocattolo gio = new Giocattolo()
                                 {
                                     Nome = inNome is not null ? inNome : "N.D",
-                                    EtaMin = inEtaMin 
+                                    Materiale = inMateriale is not null ? inMateriale : "N.D",
+                                    EtaMin = inEtaMin ,
+                                    Prezzo =inPrezzo,
                                 };
                                 if (GiocattoloDao.GetInstance().Insert(gio))
                                     Console.WriteLine("Giocattolo inserito con successo");
@@ -74,12 +83,15 @@ namespace DB_lez06_Task_edicola
 
                                 Console.WriteLine("Inserisci il Titolo");
                                 string? inTitolo = Console.ReadLine();
+                                Console.WriteLine("Inserisci il Prezzo");
+                                double inPrezz = Convert.ToDouble(Console.ReadLine());
                                 Console.WriteLine("Inserisci il Casa Editrisce ");
                                 string? inCasaEd = Console.ReadLine();
 
                                 Rivista riv = new Rivista()
                                 {
                                     Titolo = inTitolo is not null ? inTitolo : "N.D.",
+                                    Prezzo = inPrezz ,
                                     CasaEditrice = inCasaEd is not null ? inCasaEd : "N.D.",
 
                                 };

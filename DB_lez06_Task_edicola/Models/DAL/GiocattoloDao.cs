@@ -29,7 +29,7 @@ namespace DB_lez06_Task_edicola.Models.DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT giocattoloId, nome, etaMin, codUniGio FROM Giocattolo";
+                cmd.CommandText = "SELECT giocattoloId,nome,materiale,etaMin,prezzo,codUniGio FROM Giocattolo";
 
                 try
                 {
@@ -41,8 +41,10 @@ namespace DB_lez06_Task_edicola.Models.DAL
                         {
                             Id = reader.GetInt32(0),
                             Nome = reader.GetString(1),
-                            EtaMin = reader.GetInt32(2),
-                            CodUniGio = reader.GetString(3),
+                            Materiale = reader.GetString(2),
+                            EtaMin = reader.GetInt32(3),
+                            Prezzo = (double)reader.GetDecimal (4),
+                            CodUniGio = reader.GetString(5),
                         };
                         risultato.Add(giocattolo);
                     }
@@ -71,9 +73,11 @@ namespace DB_lez06_Task_edicola.Models.DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO Giocattolo(nome, etaMin) VALUES (@nom,@etaMin)";
+                cmd.CommandText = "INSERT INTO Giocattolo(nome, materiale ,etaMin , prezzo) VALUES (@nom,@materiale,@etaMin,@prezzo)";
                 cmd.Parameters.AddWithValue("@nom", obj.Nome);
+                cmd.Parameters.AddWithValue("@materiale", obj.Materiale);
                 cmd.Parameters.AddWithValue("@etaMin", obj.EtaMin);
+                cmd.Parameters.AddWithValue("@prezzo", obj.Prezzo);
                 try
                 {
                     conn.Open();
